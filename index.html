@@ -90,9 +90,12 @@
         .buttons button:hover {
             background-color: #0056b3;
         }
-                ul {
-            padding-left: 20px;
+          
+        
+        
+         ul {
             list-style-type: none;
+            padding-left: 1em;
             position: relative;
         }
 
@@ -103,11 +106,13 @@
             top: 0;
             bottom: 0;
             left: 0;
+            display: none;
         }
 
         li {
-            margin: 10px 0;
-            padding-left: 20px;
+            margin: 0;
+            padding: 0 1em;
+            line-height: 2em;
             position: relative;
         }
 
@@ -115,47 +120,49 @@
             content: '';
             border-top: 1px solid #ccc;
             position: absolute;
-            top: 10px;
-            left: 0;
-            width: 10px;
+            top: 1em;
+            left: -1em;
+            width: 1em;
+            height: 0;
+            display: none;
         }
 
         li::after {
             content: '';
             border-left: 1px solid #ccc;
             position: absolute;
-            top: 10px;
-            bottom: -10px;
-            left: 0;
-        }
-
-        li:last-child::after {
-            display: none;
-        }
-
-        .root > li::before,
-        .root > li::after {
-            border: none;
-        }
-
-        .root > li::after {
+            top: 1em;
+            bottom: 0;
+            left: -1em;
             display: none;
         }
 
         .collapsible::before {
-            content: '▼';
+            content: '+';
             display: inline-block;
             margin-right: 5px;
             cursor: pointer;
+            font-weight: bold;
         }
 
         .collapsible.collapsed::before {
-            content: '►';
+            content: '-';
         }
 
         .content {
             display: none;
         }
+
+        .collapsible + .content > li::before,
+        .collapsible + .content > li::after {
+            display: block;
+        }
+
+        .collapsible + .content::before {
+            display: block;
+        }
+        
+        
     </style>
 </head>
 <body>
