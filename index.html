@@ -44,6 +44,15 @@
         .active::before {
             content: '-'; /* Down-pointing arrow */
         }
+       
+        .date, .info {
+		font-size: 12px;
+		color: red;
+		}
+		
+		.additional-info {
+		margin-top: 5px;
+		}
         .content {
             display: none;
             margin-left: 20px;
@@ -180,10 +189,25 @@
 
 <ul>
     <li>
-        <div class="collapsible"><img src="https://raw.githubusercontent.com/j1L860/1/9df73e5aa87e55e52708f1bca2f041577cad11ab/w.svg" alt="Flag"><span class="name">* J-L860 *</span> <span class="date"> 5000 ybp *</span> <span class="info"> Son of J-Z1865</span></div>
+        <div class="collapsible"><img src="https://raw.githubusercontent.com/j1L860/1/9df73e5aa87e55e52708f1bca2f041577cad11ab/w.svg" alt="Flag"><span class="name">* J-L860 *</span>
+            
+            
+               <div class="additional-info">
+                    <span class="date"> 5000 ybp *</span>
+                    <span class="info"> Son of J-Z1865</span>
+                </div>
+            
+         </div>
         <ul class="content">
             <li>
-                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-ZS7445 *</span> <span class="date">4400 ybp *</span> <span class="info">Son of L860</span></div>
+                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-ZS7445 *</span>
+                     <div class="additional-info">
+                    <span class="date"> 5000 ybp *</span>
+                    <span class="info"> Son of J-L860</span>
+                </div>
+                    
+                    
+                    </div>
                 <ul class="content">
                     <li>
                         <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-Y217441 *  </span> <span class="date">4255 ybp *</span> <span class="info"> yem</span></div>
