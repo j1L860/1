@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Tree</title>
+    <style>
+        .tree ul {
+            padding-top: 20px; 
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            text-align: center;
+        }
+
+        .tree li {
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute; 
+            top: 0; 
+            right: 50%;
+            border-top: 2px solid #ccc;
+            width: 50%; 
+            height: 20px;
+        }
+        .tree li::after {
+            right: auto; 
+            left: 50%;
+            border-left: 2px solid #ccc;
+        }
+
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:only-child { 
+            padding-top: 0;
+        }
+
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+        .tree li:last-child::before {
+            border-right: 2px solid #ccc;
+            border-radius: 0 5px 0 0;
+        }
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute; 
+            top: 0; 
+            left: 50%;
+            border-left: 2px solid #ccc;
+            width: 0; 
+            height: 20px;
+        }
+
+        .tree li a {
+            border: 2px solid #ccc;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li a:hover, .tree li a:hover+ul li a {
+            background: #c8e4f8; 
+            color: #000; 
+            border: 1px solid #94a0b4;
+        }
+
+        .tree li a:hover+ul li::after, 
+        .tree li a:hover+ul li::before, 
+        .tree li a:hover+ul::before, 
+        .tree li a:hover+ul ul::before {
+            border-color:  #94a0b4;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .expand-btn {
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .info {
+            font-size: 10px;
+            color: blue;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            .tree ul {
+                padding-top: 20px; 
+                position: relative;
+                transition: all 0.5s;
+                -webkit-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                text-align: left;
+            }
+
+            .tree li {
+                display: block;
+                text-align: left;
+                padding: 10px 0;
+            }
+
+            .tree li::before, .tree li::after {
+                display: none;
+            }
+
+            .tree ul ul::before {
+                display: none;
+            }
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="button-container">
+    <button class="button" id="expand-all">Expand All</button>
+    <button class="button" id="hide-all">Hide All</button>
+</div>
+
+<div class="tree">
+    <ul>
+        <li>
+            <a href="#">J-L860</a>
+            <span class="expand-btn">[+]</span>
+            <div class="info">b. 1940 - d. 2020<br>Some additional info</div>
+            <ul class="hidden">
+                <li>
+                    <a href="#">Parent</a>
+                    <span class="expand-btn">[+]</span>
+                    <div class="info">b. 1965<br>Some additional info</div>
+                    <ul class="hidden">
+                        <li>
+                            <a href="#">Child 1</a>
+                            <div class="info">b. 1990<br>Some additional info</div>
+                        </li>
+                        <li>
+                            <a href="#">Child 2</a>
+                            <div class="info">b. 1992<br>Some additional info</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Parent</a>
+                    <span class="expand-btn">[+]</span>
+                    <div class="info">b. 1967<br>Some additional info</div>
+                    <ul class="hidden">
+                        <li>
+                            <a href="#">Child 3</a>
+                            <div class="info">b. 1994<br>Some additional info</div>
+                        </li>
+                        <li>
+                            <a href="#">Child 4</a>
+                            <div class="info">b. 1996<br>Some additional info</div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    document.querySelectorAll('.expand-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const ul = this.nextElementSibling.nextElementSibling;
+            if (ul.classList.contains('hidden')) {
+                ul.classList.remove('hidden');
+                this.textContent = '[-]';
+            } else {
+                ul.classList.add('hidden');
+                this.textContent = '[+]';
+            }
+        });
+    });
+
+    document.getElementById('expand-all').addEventListener('click', function() {
+        document.querySelectorAll('.tree ul').forEach(ul => {
+            ul.classList.remove('hidden');
+        });
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.textContent = '[-]';
+        });
+    });
+
+    document.getElementById('hide-all').addEventListener('click', function() {
+        document.querySelectorAll('.tree ul').forEach(ul => {
+            ul.classList.add('hidden');
+        });
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.textContent = '[+]';
+        });
+    });
+</script>
+
+</body>
+</html>
