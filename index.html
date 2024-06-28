@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L860 Y-DNA Tree</title>
-  
-   <!--  
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>L860 Y-DNA Tree</title>
+
+	<!--  
 	For Branchs (لاضافة فرع):   
 	%  <ul class="content">    
          	<li>  <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* فرع *</span> <span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div> 
@@ -13,7 +14,7 @@
 </li> 
 %  </ul>	
 -->
-	   <!--     
+	<!--     
 	For Branchs (لاضافة فرع):  
 % <ul class="content">
                           <li>
@@ -23,500 +24,703 @@
 %  </ul>	
 	-->
 
-	
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #eef2f7;
-            margin: 1px;
-            padding: 1px;
-        }
-        h2 {
-            text-align: center;
-            color:#08b9c9;
-            font-weight: bold;
-        }
-	.blue0-text {
-            color: #0ca8f0;
-            font-size: 9px;
-	    font-weight: bold;
-        }
-	    
-	.blue-text {
-            color: #1a85ba;
-            font-size: 10px;
-		
-        }
-	.blue2-text {
-            color: #0c91b3;
-            font-size: 12px;
-	    font-weight: bold;
-        }
-	    
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-	    
-        .collapsible {
-            cursor: pointer;
-            user-select: auto;
-            padding: 2px;
-         %   border: 3px solid #ccc;
-            border-radius: 25px;
-           % background-color: #fff;
-            margin-bottom: -8px;
-            display: flex;
-            align-items: center;
-	   font-weight: bold;
-	    color:#0973ba;
-	font-size: 14px;
-	           
-        }
-        .collapsible:hover {
-            background-color: #8bb4f7;
-        }
-	.collapsible::before {
-	content: '+';
-	color: blue;
-	display: inline-block;
-	margin-right: 6px;
-	}
-	
-	.collapsible.active::before {
-	content: '-';
-	}
-       
-        .date, .info {
-		
-		color: #66a1fa;
-		font-weight: bold;
-		font-size: 8px;
+
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #eef2f7;
+			margin: 1px;
+			padding: 1px;
 		}
-		
-	.additional-info {
-		margin-top: 5px;
+
+		h2 {
+			text-align: center;
+			color: #08b9c9;
+			font-weight: bold;
 		}
-        .content {
-            display: none;
-            margin-left: 20px;
-        }
-        .member {
-            display: flex;
-            align-items: center;
-            padding: 5px;
-            margin-bottom: 5px;
-        }
-        .member img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-        .member span.name {
-            font-weight: bold;
-            color: #66a1fa;
-		font-size: 12px;
-            margin-right: 10px;
-        }
-        .member span.date {
-            color: gray;
-            font-size: 8px;
-        }
-        .member span.info {
-            margin-left: 10px;
-            font-size: 8px;
-            color: gray;
-        }
-        .buttons {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .buttons button {
-            padding: 10px 50px;
-            margin: 0 20px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            background-color: #007bff;
-            font-weight: bold;
-            color: white;
-	    font-size: 10px;
-        }
-        .buttons button:hover {
-            background-color: #0056b3;
-        }
-          
-        
-        
-         ul {
-            list-style-type: none;
-            padding-left: 1em;
-            position: relative;
-        }
 
-        ul::before {
-            content: '';
-            border-left: 1px solid #8102ab;
-            position: absolute;
-            top: 0;
-            bottom: 1em;
-            left: 0;
-            display: none;
-        }
+		.blue0-text {
+			color: #0ca8f0;
+			font-size: 9px;
+			font-weight: bold;
+		}
 
-        li {
-            margin: 0;
-            padding: 0 1em;
-            line-height: 1.5em;
-            position: relative;
-        }
+		.blue-text {
+			color: #1a85ba;
+			font-size: 10px;
 
-        li::before {
-            content: '';
-            border-top: 1.8px solid #8102ab;
-            position: absolute;
-            top: 1em;
-	    bottom: 1em;
-            left: -1em;
-            width: 2em;
-            height: 0;
-            display: none;
-        }
+		}
 
-        li::after {
-            content: '';
-            border-left: 0px solid #8102ab;
-            position: absolute;
-            top: 1em;
-            bottom: 0;
-            left: -1em;
-            display: none;
-        }
+		.blue2-text {
+			color: #0c91b3;
+			font-size: 12px;
+			font-weight: bold;
+		}
 
-        .collapsible::before {
-            content: '+';
-            display: inline-block;
-            margin-right: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+		ul {
+			list-style-type: none;
+			padding-left: 20px;
+		}
 
-        .collapsible.collapsed::before {
-            content: '-';
-        }
+		.collapsible {
+			cursor: pointer;
+			user-select: auto;
+			padding: 2px;
+			% border: 3px solid #ccc;
+			border-radius: 25px;
+			% background-color: #fff;
+			margin-bottom: -8px;
+			display: flex;
+			align-items: center;
+			font-weight: bold;
+			color: #0973ba;
+			font-size: 14px;
 
-        .content {
-            display: none;
-        }
+		}
 
-        .collapsible + .content > li::before,
-        .collapsible + .content > li::after {
-            display: block;
-        }
+		.collapsible:hover {
+			background-color: #8bb4f7;
+		}
 
-        .collapsible + .content::before {
-            display: block;
-        }
-        
-        
-    </style>
+		.collapsible::before {
+			content: '+';
+			color: blue;
+			display: inline-block;
+			margin-right: 6px;
+		}
+
+		.collapsible.active::before {
+			content: '-';
+		}
+
+		.date,
+		.info {
+
+			color: #66a1fa;
+			font-weight: bold;
+			font-size: 8px;
+		}
+
+		.additional-info {
+			margin-top: 5px;
+		}
+
+		.content {
+			display: none;
+			margin-left: 20px;
+		}
+
+		.member {
+			display: flex;
+			align-items: center;
+			padding: 5px;
+			margin-bottom: 5px;
+		}
+
+		.member img {
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+			border-radius: 50%;
+		}
+
+		.member span.name {
+			font-weight: bold;
+			color: #66a1fa;
+			font-size: 12px;
+			margin-right: 10px;
+		}
+
+		.member span.date {
+			color: gray;
+			font-size: 8px;
+		}
+
+		.member span.info {
+			margin-left: 10px;
+			font-size: 8px;
+			color: gray;
+		}
+
+		.buttons {
+			text-align: center;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+
+		.buttons button {
+			padding: 10px 50px;
+			margin: 0 20px;
+			border: none;
+			border-radius: 30px;
+			cursor: pointer;
+			background-color: #007bff;
+			font-weight: bold;
+			color: white;
+			font-size: 10px;
+		}
+
+		.buttons button:hover {
+			background-color: #0056b3;
+		}
+
+
+
+		ul {
+			list-style-type: none;
+			padding-left: 1em;
+			position: relative;
+		}
+
+		ul::before {
+			content: '';
+			border-left: 1px solid #8102ab;
+			position: absolute;
+			top: 0;
+			bottom: 1em;
+			left: 0;
+			display: none;
+		}
+
+		li {
+			margin: 0;
+			padding: 0 1em;
+			line-height: 1.5em;
+			position: relative;
+		}
+
+		li::before {
+			content: '';
+			border-top: 1.8px solid #8102ab;
+			position: absolute;
+			top: 1em;
+			bottom: 1em;
+			left: -1em;
+			width: 2em;
+			height: 0;
+			display: none;
+		}
+
+		li::after {
+			content: '';
+			border-left: 0px solid #8102ab;
+			position: absolute;
+			top: 1em;
+			bottom: 0;
+			left: -1em;
+			display: none;
+		}
+
+		.collapsible::before {
+			content: '+';
+			display: inline-block;
+			margin-right: 5px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		.collapsible.collapsed::before {
+			content: '-';
+		}
+
+		.content {
+			display: none;
+		}
+
+		.collapsible+.content>li::before,
+		.collapsible+.content>li::after {
+			display: block;
+		}
+
+		.collapsible+.content::before {
+			display: block;
+		}
+	</style>
 </head>
+
 <body>
-    <h2>
-     <img src="https://github.com/j1L860/1/blob/main/l860NBG.png?raw=true" alt="l860">
-</h2> 
-       <h2>الجينية J1-L860 مشجرة التحور</h2> <be>
-	<p  class =" blue0-text " >      Y-Adam → A0-T → A-P305 → A-P108 → BT → CT → CF → F → GHIJK → HIJK → IJK → IJ → J → J-L255 (J1-M267) → J-CTS2251 → J-Z2217 → J-L620 → J-PF4816 → J-L136 → J-P58 → J-CTS9721 → J-Z643 → J-Z1865 → J-L860 </p>
+	<h2>
+		<img src="https://github.com/j1L860/1/blob/main/l860NBG.png?raw=true" alt="l860">
+</h2>
+		<h2>الجينية J1-L860 مشجرة التحور</h2>
+		<be>
+			<p class=" blue0-text "> Y-Adam → A0-T → A-P305 → A-P108 → BT → CT → CF → F → GHIJK → HIJK → IJK → IJ → J →
+				J-L255 (J1-M267) → J-CTS2251 → J-Z2217 → J-L620 → J-PF4816 → J-L136 → J-P58 → J-CTS9721 → J-Z643 →
+				J-Z1865 → J-L860 </p>
 
-    <br><br>
-    <div class="buttons">
-    <button id="expandAll">إظهار الفروع</button>
-    <button id="collapseAll">إخفاء الفروع</button>
-</div>
+			<br><br>
+			<div class="buttons">
+				<button id="expandAll">إظهار الفروع</button>
+				<button id="collapseAll">إخفاء الفروع</button>
+			</div>
 
-<ul>
-    <li>
-        <div class="collapsible"><img src="https://raw.githubusercontent.com/j1L860/1/9df73e5aa87e55e52708f1bca2f041577cad11ab/w.svg" alt="Flag"><span class="name">* J-L860 *</span>
-            
-            
-               <div class="additional-info">
-                    <span class="date">  * العمر 5000 سنة *</span>
-                    <span class="info"> J-Z1865 ابن التحور </span>
-                </div> </div>
-        <ul class="content">
-            <li>
-                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-ZS7445 *</span>
-                     <div class="additional-info">
-                    <span class="date">   * العمر 5000 سنة *</span>
-                    <span class="info">  J-L860  ابن التحور</span>
-                </div>
-                    
-                    </div> 
-                <ul class="content">
+			<ul>
+				<li>
+					<div class="collapsible">
+						<img src="https://raw.githubusercontent.com/j1L860/1/9df73e5aa87e55e52708f1bca2f041577cad11ab/w.svg" alt="Flag"><span class="name">* J-L860 *</span>
 
 
+						<div class="additional-info">
+							<span class="date">  * العمر 5000 سنة *</span>
+							<span class="info"> J-Z1865 ابن التحور </span>
+						</div>
+					</div>
+					<ul class="content">
+						<li>
+							<div class="collapsible">
+								<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-ZS7445 *</span>
+								<div class="additional-info">
+									<span class="date">   * العمر 5000 سنة *</span>
+									<span class="info">  J-L860  ابن التحور</span>
+								</div>
+
+							</div>
+							<ul class="content">
 
 
 
 
-			
+
+
+
+								<li>
+									<div class="collapsible">
+										<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-Y217441 *  </span>
+										<span class="date">4255 ybp *</span> <span class="info"> yem</span></div>
+									<ul class="content">
+										<li>
+											<div class="collapsible">
+												<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-Y217444* </span>
+												<span class="date">1645 *</span> <span class="info">... D.</span></div>
+											<ul class="content">
+						<li>
+				
+		<div class="collapsible">
+			<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* الكلالي *</span>
+			<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+<ul class="content">
+	
+<li>
+	<div class="member">
+		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* عبدالله أسعد الكلالي *</span>
+		<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+<li>
+	<div class="member">
+		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* وليد الكلالي *</span>
+		<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+<li>
+	<div class="member">
+		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*  أحمد (بن فضل) الكلالي *</span>
+		<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+
+</li>
+<li>
+	<div class="member">
+		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*   مروان (بن فضل) الكلالي *</span>
+		<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+</li>
+<li>
+	<div class="member">
+		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*  عبد الرحمن (بن عقيل) الكلالي *</span>
+		<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+</li>
+<li>
+	<div class="member">
+		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*  عبد الحكيم (بن عطية) الكلالي *</span>
+		<span class="date">* تاريخ *</span> <span class="info"> *معلومات* </span></div>
+</li>
+
+</ul>
+
+								<li>
+									<div class="member">
+										<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* الريمي * </span>
+										<span class="date">1645 *</span>
+										<span class="info"> عائش الريمي - مزهر - ريمة</span></div>
+								
+							
+
+												</li>
+											</ul>
+										
+										<li>
+										<div class="member">
+												<img src="https://www.theytree.com/static/images/nflags/et.png" alt="Flag"><span class="name">* Adam *</span>
+												<span class="date">(na - )</span> <span class="info">Mekbib Teklemariam Woldeyesus</span></div>
+										</li>
+									</ul>
+								
+
+							
+								<li>
+									<div class="collapsible">
+										<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7438* </span>
+										<span class="date">3500 ybp *</span> <span class="info"> yem</span></div>
+									<ul class="content">
+										<li>
+											<div class="collapsible">
+												<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7455*</span>
+												<span class="date">1000 *</span> <span class="info">.. City D.</span>
+											</div>
+
+											<ul class="content">
+												<li>
+													<div class="collapsible">
+														<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-FGC93816*</span>
+														<span class="date">1000 *</span>
+														<span class="info">.. City D.</span></div>
+													<ul class="content">
+														<li>
+															<div class="member">
+																<img src="https://www.theytree.com/static/images/nflags/sa.png" alt="Flag"><span class="name"> * الهذلي*</span>
+																<span class="date">1000 *</span>
+																<span class="info">.. City D.</span></div>
+														<li>
+															<div class="member">
+																<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *باسويد*</span>
+																<span class="date">1000 *</span>
+																<span class="info">.. City D.</span></div>
+														</li>
+												</li>
+											</ul>
+
+
+
+										<li>
+											<div class="collapsible">
+												<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y50052*</span>
+												<span class="date">1000 *</span> <span class="info">.. City D.</span>
+											</div>
+											<ul class="content">
+												<li>
+													<div class="collapsible">
+														<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7428*</span>
+														<span class="date">1000 *</span>
+														<span class="info">.. City D.</span></div>
+
+													<ul class="content">
+														<li>
+															<div class="collapsible">
+																<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-ZS7462 *</span>
+																<span class="date">1500 *</span>
+																<span class="info">.. City D.</span></div>
+
+															<ul class="content">
+																<li>
+																	<div class="collapsible">
+																		<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7432*</span>
+																		<span class="date">1000 *</span>
+																		<span class="info">.. City D.</span></div>
+
+																	<ul class="content">
+																		<li>
+																			<div class="collapsible">
+																				<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-TY475649*</span>
+																				<span class="date">1000 *</span>
+																				<span class="info">.. City D.</span>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="collapsible">
+																				<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-FT342668*</span>
+																				<span class="date">1000 *</span>
+																				<span class="info">.. City D.</span>
+																			</div>
+																		</li>
+																		<li>
+																			<div class="collapsible">
+																				<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y198676*</span>
+																				<span class="date">1000 *</span>
+																				<span class="info">.. City D.</span>
+																			</div>
+																			<ul class="content">
+
+
+																		</li>
+																		<li>
+																			<div class="collapsible">
+																				<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y218892*</span>
+																				<span class="date">1000 *</span>
+																				<span class="info">.. City D.</span>
+																			</div>
+																			<ul class="content">
+																				<li>
+																					<div class="collapsible">
+																						<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y225708*</span>
+																						<span class="date">1000 *</span>
+																						<span class="info">.. City D.</span>
+																					</div>
+
+																				<li>
+																					<div class="collapsible">
+																						<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * باريان *</span>
+																						<span class="date">* 1000 *</span>
+																						<span class="info">  العمر 400 سنة |1000 هـ</span>
+																					</div>
+																					<ul class="content">
+																						<li>
+																							<div class="member">
+																								<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * ال علي*</span>
+																								<span class="date">1000 *</span>
+																								<span class="info">.. City D.</span>
+																							</div>
+																						</li>
+																						<li>
+																							<div class="member">
+																								<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * ال باحاج*</span>
+																								<span class="date">400 *</span>
+																								<span class="info"> * الحاج عبدالله عمر باريان | 1045 هـ * </span>
+																							</div>
+																						</li>
+																						<li>
+																							<div class="member">
+																								<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * ال عوض*</span>
+																								<span class="date">1000 *</span>
+																								<span class="info">.. City D.</span>
+																							</div>
+																						</li>
+																				</li>
+																		</li>
+																	</ul>
+																<li> </li>
+															</ul>
+
+														<li>
+															<div class="collapsible">
+																<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-FT294363*</span>
+																<span class="date">1000 *</span>
+																<span class="info">.. City D.</span></div>
+
+														</li>
+
+
+												</li>
+											</ul>
+
+
+										</li>
+									</ul>
+								<li>
+									<div class="member">
+										<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * القثمي *</span>
+										<span class="date">1000 *</span> <span class="info">.. City D.</span></div>
+								</li>
+						</li>
+					</ul>
+
+
+
+
+				</li>
+			</ul>
 			<li>
-                        <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-Y217441 *  </span> <span class="date">4255 ybp *</span> <span class="info"> yem</span></div>
-                        <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-Y217444* </span> <span class="date">1645 *</span> <span class="info">... D.</span></div>
-                                  <ul class="content">
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* الكلالي * </span> <span class="date">1645 ybp *</span> <span class="info">nna </span></div>
-                            </li>
-                                       <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* الريمي * </span> <span class="date">1645 *</span> <span class="info"> City D.</span></div>
-                            </li>
-                                      </ul>
-                            </li>
-                                
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/et.png" alt="Flag"><span class="name">* Adam *</span> <span class="date">(na - )</span> <span class="info">Eth</span></div>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    
-                    
-
-
-    <!--  st 38-->
-                    <li>
-                        <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7438* </span> <span class="date">3500 ybp *</span> <span class="info"> yem</span></div>
-                        <ul class="content">
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7455*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                           
-                           <ul class="content">
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-FGC93816*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                                 <ul class="content">
-                          <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/sa.png" alt="Flag"><span class="name"> * الهذلي*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                             <li>  <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *باسويد*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                 </li>
-		 </li>
-                   </ul>
-                                
-  
-                                
-                             <li>    <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y50052*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                                  <ul class="content">
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7428*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-
-                                 <ul class="content">
-                          <li>
-                               <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-ZS7462 *</span> <span class="date">1500 *</span> <span class="info">.. City D.</span></div>
-                               
-                                <ul class="content">
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-ZS7432*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                                
-                           <ul class="content">
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-TY475649*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                          </li> 
-				   <li>       <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-FT342668*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                        </li> 
-				   <li>         <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y198676*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                                <ul class="content">
-			
-			
+				<div class="collapsible">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-FT117111*</span>
+					<span class="date">1000 *</span> <span class="info">.. City D.</span></div>
 			</li>
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y218892*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                                 <ul class="content">
-                          <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-Y225708*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                       
-					 <li>      <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * باريان *</span> <span class="date">* 1000 *</span> <span class="info">  العمر 400 سنة |1000 هـ</span></div>
-				 <ul class="content">
-                          <li> <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * ال علي*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div> </li>
-	 <li> <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * ال باحاج*</span> <span class="date">400 *</span> <span class="info"> * الحاج عبدالله عمر باريان | 1045 هـ * </span></div> </li>
-	 <li> <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * ال عوض*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div> </li>
-                                </li>
-                                                   </li>
-                   </ul>
-				 <li> </li>  
-				</ul>
-                             
-                              <li>   <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *J-FT294363*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                                
-                                </li>
+			<li>
+				<div class="member">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * العصرني*</span>
+					<span class="date">1000 *</span> <span class="info">.. City D.</span></div>
+			</li>
+			</li>
 
-                               
-                                                </li>
-                   </ul>  
-                               
-                               
-                                     </li>
-                   </ul>     
-                             <li>   <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * القثمي *</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                         </li>     </li>
-                   </ul>
-                               
-                               
-                               
-                               
-                   </li>
-                   </ul>
-                              <li>   <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-FT117111*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                        </li>
-                               <li>     <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * العصرني*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
- </li>
-                          </li>
-                               
 
-                   </ul>
-<li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/tn.png" alt="Flag"><span class="name"> * بالحاج*</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-</li>
-                            </li>
-                   </ul>
-                           
-                           
-                           
-                            </li>
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* باشبيل *</span> <span class="date">1000 *</span> <span class="info">.. City D.</span></div>
-                            </li>
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * باحميدان * </span> <span class="date">(1995 - )</span> <span class="info"> City E.</span></div>
-                            </li>
- <!-- 
+			</ul>
+			<li>
+				<div class="member">
+					<img src="https://www.theytree.com/static/images/nflags/tn.png" alt="Flag"><span class="name"> * بالحاج*</span>
+					<span class="date">1000 *</span> <span class="info">.. City D.</span></div>
+			</li>
+			</li>
+			</ul>
+
+
+
+			</li>
+			<li>
+				<div class="member">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* باشبيل *</span>
+					<span class="date">1000 *</span> <span class="info">.. City D.</span></div>
+			</li>
+			<li>
+				<div class="member">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * باحميدان * </span>
+					<span class="date">(1995 - )</span> <span class="info"> City E.</span></div>
+			</li>
+			<!-- 
            <li>    <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> *new * </span> <span class="date">3500 ybp *</span> <span class="info"> yem</span></div>  </li>    -->
-	
-	
-                        </ul>
- 
-
- 
-                    
- <!-- end 38 -->
-			   <!-- st 25 -->                
-<li>
-                        <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-ZS11325* </span> <span class="date">3750 ybp *</span> <span class="info"> yem</span></div>
-                        <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FT193359 *</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-                                <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FT192337 *</span> <span class="date">1000 *</span> <span class="info"> in City D.</span></div>
-                                 <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FT192921 *</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-<ul class="content">
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* الكبان *</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-                       </li>
-    
-                                
-                       </li>
-                                     </ul>
-                                   <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* Saudi Result (Study)  * </span> <span class="date">1000 *</span> <span class="info">ا...</span></div>
-                            </li>
-                           </ul>         
-                           
-                           
-                            </li>
-                           
 
 
-      <!-- st zs11347 -->                         
-                             <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-ZS11347 * </span> <span class="date">1000 *</span> <span class="info">ا...</span></div>
- <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-ZS11341*</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-<ul class="content">
-    <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FTC68730*</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
- <ul class="content">
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*بن سعدين*</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-</ul>
-</li>
- <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-ZS11322*</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-                                 <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-FT357234 *</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-
-<li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-FT293071 *</span> <span class="date">1000 *</span> <span class="info"> City D.</span></div>
-</ul>
-
-</li>
-     </ul>
-                                 
-                            </li>
-            
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*  اليوسفي * </span> <span class="date">(1995 - )</span> <span class="info">....</span></div>
-                            </li>
-                       
-                   </li>
-                   </li>
-                   </ul>
-	       <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* العصيفري * </span> <span class="date">1000 *</span> <span class="info">ا...</span></div>
-                            </li>
-                   </ul>
-				  
-                   </ul> 
-                    <!-- en zs11347 -->
- <!-- en 25 -->
-                    
-                    <li>
-                        <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-FTA7671 *  </span> <span class="date">4255 ybp *</span> <span class="info"> yem</span></div>
-                        <ul class="content">
-                            <li>
-                                <div class="collapsible"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-FTA7711* </span> <span class="date">1645 *</span> <span class="info"> naa </span></div>
-                                  <ul class="content">
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/om.png" alt="Flag"><span class="name">* باعنقود * </span> <span class="date">1645 *</span> <span class="info">na.</span></div>
-                            </li>
-                                       <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* باكودح * </span> <span class="date">1645 *</span> <span class="info">naa</span></div>
-                            </li>
-                                      </ul>
-                            </li>
-                                
-                            <li>
-                                <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* العمري *</span> <span class="date">(na - )</span> <span class="info">Eth</span></div>
-                            </li>
-                        </ul>
-                    </li>  
+			</ul>
 
 
-  
-    
-              
-</ul>
-                    
-               <!--     <li>
+
+
+			<!-- end 38 -->
+			<!-- st 25 -->
+			<li>
+				<div class="collapsible">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-ZS11325* </span>
+					<span class="date">3750 ybp *</span> <span class="info"> yem</span></div>
+				<ul class="content">
+					<li>
+						<div class="collapsible">
+							<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FT193359 *</span>
+							<span class="date">1000 *</span> <span class="info"> City D.</span></div>
+						<ul class="content">
+							<li>
+								<div class="collapsible">
+									<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FT192337 *</span>
+									<span class="date">1000 *</span> <span class="info"> in City D.</span></div>
+								<ul class="content">
+									<li>
+										<div class="collapsible">
+											<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FT192921 *</span>
+											<span class="date">1000 *</span> <span class="info"> City D.</span></div>
+										<ul class="content">
+											<li>
+												<div class="member">
+													<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* الكبان *</span>
+													<span class="date">1000 *</span> <span class="info"> City D.</span>
+												</div>
+											</li>
+
+
+									</li>
+								</ul>
+							<li>
+								<div class="member">
+									<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* Saudi Result (Study)  * </span>
+									<span class="date">1000 *</span> <span class="info">ا...</span></div>
+							</li>
+						</ul>
+
+
+					</li>
+
+
+
+					<!-- st zs11347 -->
+					<li>
+						<div class="collapsible">
+							<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-ZS11347 * </span>
+							<span class="date">1000 *</span> <span class="info">ا...</span></div>
+						<ul class="content">
+							<li>
+								<div class="collapsible">
+									<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-ZS11341*</span>
+									<span class="date">1000 *</span> <span class="info"> City D.</span></div>
+								<ul class="content">
+									<li>
+										<div class="collapsible">
+											<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-FTC68730*</span>
+											<span class="date">1000 *</span> <span class="info"> City D.</span></div>
+										<ul class="content">
+											<li>
+												<div class="member">
+													<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*بن سعدين*</span>
+													<span class="date">1000 *</span> <span class="info"> City D.</span>
+												</div>
+										</ul>
+									</li>
+									<li>
+										<div class="collapsible">
+											<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*J-ZS11322*</span>
+											<span class="date">1000 *</span> <span class="info"> City D.</span></div>
+										<ul class="content">
+											<li>
+												<div class="collapsible">
+													<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-FT357234 *</span>
+													<span class="date">1000 *</span> <span class="info"> City D.</span>
+												</div>
+
+											<li>
+												<div class="collapsible">
+													<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-FT293071 *</span>
+													<span class="date">1000 *</span> <span class="info"> City D.</span>
+												</div>
+										</ul>
+
+									</li>
+								</ul>
+
+							</li>
+
+							<li>
+								<div class="member">
+									<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">*  اليوسفي * </span>
+									<span class="date">(1995 - )</span> <span class="info">....</span></div>
+							</li>
+
+					</li>
+			</li>
+			</ul>
+			<li>
+				<div class="member">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* العصيفري * </span>
+					<span class="date">1000 *</span> <span class="info">ا...</span></div>
+			</li>
+			</ul>
+
+			</ul>
+			<!-- en zs11347 -->
+			<!-- en 25 -->
+
+			<li>
+				<div class="collapsible">
+					<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name"> * J-FTA7671 *  </span>
+					<span class="date">4255 ybp *</span> <span class="info"> yem</span></div>
+				<ul class="content">
+					<li>
+						<div class="collapsible">
+							<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* J-FTA7711* </span>
+							<span class="date">1645 *</span> <span class="info"> naa </span></div>
+						<ul class="content">
+							<li>
+								<div class="member">
+									<img src="https://www.theytree.com/static/images/nflags/om.png" alt="Flag"><span class="name">* باعنقود * </span>
+									<span class="date">1645 *</span> <span class="info">na.</span></div>
+							</li>
+							<li>
+								<div class="member">
+									<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* باكودح * </span>
+									<span class="date">1645 *</span> <span class="info">naa</span></div>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<div class="member">
+							<img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">* العمري *</span>
+							<span class="date">(na - )</span> <span class="info">Eth</span></div>
+					</li>
+				</ul>
+			</li>
+
+
+
+
+
+			</ul>
+
+			<!--     <li>
                         <div class="member"><img src="https://www.theytree.com/static/images/nflags/ye.png" alt="Flag"><span class="name">hidden</span> <span class="date">(1965 - )</span> <span class="info"> City F.</span></div>
                     </li> -->
-                
-            </li>
-            <li>
-                <div class="member"><img src="https://www.theytree.com/static/images/nflags/sa.png" alt="Flag"><span class="name">* Saudi Result (FTDNA) *</span> <span class="date">5000 *</span> <span class="info">KSA</span></div>
-            </li>
-        </ul> </ul>
-    </li>
-</ul>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+			</li>
+			<li>
+				<div class="member">
+					<img src="https://www.theytree.com/static/images/nflags/sa.png" alt="Flag"><span class="name">* Saudi Result (FTDNA) *</span>
+					<span class="date">5000 *</span> <span class="info">KSA</span></div>
+			</li>
+			</ul>
+			</ul>
+			</li>
+			</ul>
+
+			<script>
+				document.addEventListener("DOMContentLoaded", function() {
         var coll = document.getElementsByClassName("collapsible");
 
         for (var i = 0; i < coll.length; i++) {
@@ -556,15 +760,20 @@
         expandAllSections();
     });
 	 
-</script>
-    <br>
-   
-   <p class="blue2-text">    :إعداد</p>
-<a href="https://twitter.com/j1l860/"> <p class="blue2-text">    الجيني L860 مشروع </p></a>
+			</script>
+			<br>
 
-<a href="https://twitter.com/S7Ryn/"><p class="blue-text">By: Saleh Barayan</p></a>	
-<p class="blue-text">© 2024</p>
-	<br>
-   
+			<p class="blue2-text"> :إعداد</p>
+			<a href="https://twitter.com/j1l860/">
+				<p class="blue2-text"> الجيني L860 مشروع </p>
+			</a>
+
+			<a href="https://twitter.com/S7Ryn/">
+				<p class="blue-text">By: Saleh Barayan</p>
+			</a>
+			<p class="blue-text">© 2024</p>
+			<br>
+
 </body>
+
 </html>
